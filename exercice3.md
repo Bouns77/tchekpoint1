@@ -31,9 +31,15 @@ jobs -l | grep gedit
 ``
 
 7)
-Pour la couche 2 : Commutateur, pont		Transmettre les données au sein d’un réseau local
+Pour la couche 2 : Matériels : Commutateur, pont.
 
-Pour la couche 3	Routeur 	 Acheminer les données entre les réseaux
+Spécificité: Transmettre les données au sein d’un réseau local
+
+
+Pour la couche 3	Matériel : Routeur 	
+
+Spécificité : Acheminer les données entre les réseaux
+
 
 8)
 cd ==> idem
