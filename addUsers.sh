@@ -1,6 +1,6 @@
 #! /bin/bash
 
-if [ -z $@ ]
+if [ -z $1 ]
 
 then
 
@@ -12,31 +12,27 @@ else
 
         # vérification de l'existence de l'utilisateur
 
-        if cat /etc/passwd | grep $@ > /dev/null
+        for nom in "$@"
 
-        then
+        do
+                if cat /etc/passwd | grep $nom > /dev/null
+                
+                then
 
-                # l'utilisateur $@ existe
+                        # l'utilisateur $@ existe
 
-                echo "L'utilisateur $@ existe"
+                        echo "L'utilisateur $nom existe"
 
-  
-        else
-                for nom in "$@"
+                else
 
-                do
+                        # création d'un utilisateur     
 
-                # création d'un utilisateur     
+                        useradd $nom && echo "L'utilisateur $nom a été crée "
 
-                useradd $nom && echo "L'utilisateur $nom a été crée "
+                fi
 
-                done
-
-        fi
+        done
 
 fi
 
 exit 0
-
-
-
